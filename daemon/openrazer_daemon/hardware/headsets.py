@@ -8,6 +8,11 @@ import re
 from openrazer_daemon.hardware.device_base import RazerDevice as __RazerDevice, RazerDeviceBrightnessSuspend as __RazerDeviceBrightnessSuspend
 from openrazer_daemon.dbus_services.dbus_methods import kraken as _dbus_kraken, chroma_keyboard as _dbus_chroma
 
+class RazerKrakenV4(__RazerDevice):
+    EVENT_FILE_REGEX = re.compile(r'.*Razer_Kraken_V4_2\.4_0000000000000000-event-if03')
+
+    USB_VID = 0x1532
+    USB_PID = 0x0501
 
 class RazerKraken71(__RazerDevice):
     """
